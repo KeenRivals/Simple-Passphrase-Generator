@@ -1,0 +1,29 @@
+body {
+	font-family: sans-serif;
+}
+
+div.main {
+	max-width:55em;
+	margin: 0 auto;
+}
+
+#result {
+	font-family:monospace;
+	font-size:.9em;
+}
+
+fieldset {
+	border-radius:5px;
+}
+
+legend {
+	font-weight:bold;
+}
+
+input[type=number]{
+	width:4em;
+}
+
+fieldset {
+	margin:1em 0;
+}

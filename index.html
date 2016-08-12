@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="screen.css" media="all">
+		<title>Simple Passphrase Generator</title>
+		<meta name="description" content="Simple passphrase generator using EFF's large wordlist.">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="text/javascript" src="generate.js"></script>
+		<script type="text/javascript" src="eff_large_wordlist.js"></script>
+	</head>
+	<body onload="generate(document.forms[0])">
+		<div class="main">
+			<h1>Simple Passphrase Generator</h1>
+			<p>Generate secure diceware <a href="https://en.wikipedia.org/wiki/Passphrase" title="Passphrase on Wikipedia">passphrases</a> using the <a href="https://www.eff.org/deeplinks/2016/07/new-wordlists-random-passphrases" title="EFF wordlists for random passphrases">EFF&rsquo;s large wordlist</a>. Source on GitHub.</p>
+			<form>
+				<fieldset>
+					<legend>Options</legend>
+					<p>
+						<label for="numWords">Words</label>
+						<input name="numWords" type="number" value="4" id="numWords" min="1">
+					</p>
+					<p>
+						<label for="numPassphrases">Passphrases</label>
+						<input name="numPassphrases" type="number" size="4" value="5" id="numPassphrases"  min="1">
+					</p>
+					<p>
+						<input type="radio" name="display" value="display" checked>Display</input>
+						<input type="radio" name="display" value="download">Download</input>
+					</p>
+					<input type="button" value="Generate" onclick="generate(this.form)">
+				</fieldset>
+			</form>
+			<fieldset>
+				<legend>Result</legend>
+				<p id="result"></p>
+			</fieldset>
+		</div>
+	</body>
+</html>
