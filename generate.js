@@ -9,11 +9,11 @@ function generate(form){
 	for (var i=0;i<numPassphrases;i++) {
 		passphraseList.push(buildPassphrase(wordlist,numWords));
 	}
-	
+
 	/* Send list of passphrases to the page or a download. */
-	if(form.display.value=="display"){
+	if(form.display[0].checked){
 		displayResults(passphraseList);
-	} else if( form.display.value=="download"){
+	} else if(form.display[1].checked){
 		downloadResults(passphraseList);
 	}
 }

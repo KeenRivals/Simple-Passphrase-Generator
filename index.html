@@ -25,8 +25,10 @@
 						<input name="numPassphrases" type="number" size="4" value="5" id="numPassphrases"  min="1">
 					</p>
 					<p>
-						<input type="radio" name="display" value="display" checked>Display</input>
-						<input type="radio" name="display" value="download">Download</input>
+						<input type="radio" name="display" value="display" checked id="display">
+						<label for="display">Display</label>
+						<input type="radio" name="display" value="download" id="download">
+						<label for="download">Download</label>
 					</p>
 					<input type="button" value="Generate" onclick="generate(this.form)">
 				</fieldset>
