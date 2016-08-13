@@ -24,10 +24,25 @@ function buildPassphrase(wordlist, numWords){
 	var passphrase = "";
 	
 	for (var i=0;i<numWords;i++){
-		passphrase += wordlist[ Math.floor(Math.random() * wordlistLength) ] +" ";
+		passphrase += wordlist[secureRandom(wordlist.length)] +" ";
 	}
 	
 	return passphrase.trim();
+}
+
+/* Generate a secure random number */
+function secureRandom(count){
+	var rand = new Uint32Array(1);
+	var skip = 0x7fffffff - 0x7fffffff % count;
+	var result;
+	var cryptoObj = window.crypto || window.msCrypto;
+
+	do {
+		cryptoObj.getRandomValues(rand);
+		result = rand[0] & 0x7fffffff;
+	} while (result >= skip);
+	
+	return result % count;
 }
 
 /* Add line breaks then inject the generated passphrases into #result */
